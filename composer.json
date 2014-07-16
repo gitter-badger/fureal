@@ -1,0 +1,54 @@
+{
+    "name": "macavity/fureal",
+    "description": "A Custom CMS made for WoW Private Servers",
+    "keywords": ["cms", "php", "laravel", "world of warcraft"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Pape",
+            "homepage": "http://www.paneon.de"
+        }
+    ],
+    "require": {
+        "laravel/framework": "~4.1.27",
+        "zizaco/confide": "~3.2",
+        "zizaco/entrust": "~1.2",
+        "bllim/datatables": "~1.3",
+    	"laravelbook/ardent": "dev-master",
+        "teepluss/theme": "~1",
+        "rcrowe/twigbridge": "0.5.*",
+        "twig/extensions": "1.0.*"
+    },
+    "require-dev": {
+        "way/generators": "~2.6",
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "~0.9",
+        "summerstreet/woodling": "~0.1.6",
+        "barryvdh/laravel-ide-helper": "~1.9"
+    },
+    "autoload": {
+        "classmap": [
+            "app/commands",
+            "app/controllers",
+            "app/library",
+            "app/models",
+            "app/database/migrations",
+            "app/database/seeds",
+            "app/tests/library"
+        ]
+    },
+    "scripts": {
+        "pre-update-cmd": [
+            "php artisan clear-compiled"
+        ],
+        "post-install-cmd": [
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "php artisan optimize"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}

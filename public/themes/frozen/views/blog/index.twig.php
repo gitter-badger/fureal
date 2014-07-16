@@ -1,0 +1,5 @@
+
+{# Content#}
+Blog/Index
+
+{{ posts }}
